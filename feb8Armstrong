@@ -1,0 +1,13 @@
+def armstrong(n):
+  k=len(n)
+  result=0
+  if n:
+    result+= (pow(int(n[0]),3)+ armstrong(n[1:]))
+  return result
+
+n=input()  
+k=(armstrong(n))
+if(k==int(n)):
+  print("ARMSTRONG")
+else:
+  print("NOT ARMSTRONG")
