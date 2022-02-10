@@ -1,0 +1,18 @@
+def bubbleSort(amount, numbers):
+    sorted = False
+    swapCount, passCount = 0,0
+
+    while not sorted:
+        sorted = True
+        for i in range(amount-1):
+            if numbers[i] > numbers[i+1]:
+                sorted = False
+                swapCount += 1
+                numbers[i], numbers[i+1] = numbers[i+1], numbers[i]
+        passCount += 1
+    print(passCount, swapCount)
+    print(numbers)
+
+a=int(input())
+nums=[int(x) for x in input().split()]
+bubbleSort(a,nums)
