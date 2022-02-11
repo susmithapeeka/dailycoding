@@ -1,0 +1,39 @@
+#mistakes made was assigning arr=arr.remove(x) in function sumi dont do that
+
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'miniMaxSum' function below.
+#
+# The function accepts INTEGER_ARRAY arr as parameter.
+#
+
+def miniMaxSum(arr):
+    # Write your code here
+    mini=min(arr)
+    maxi=max(arr)
+    x=arr.copy()
+    y=arr.copy()
+    a=sumi(mini,x)
+    b=sumi(maxi,y)
+    return a,b
+    
+def sumi(m,arr):
+    arr.remove(m)
+    sum=0
+    for x in arr:
+        sum=sum+x
+    return sum
+          
+
+if __name__ == '__main__':
+
+    arr = list(map(int, input().rstrip().split()))
+
+    a,b=miniMaxSum(arr)
+    print(b,a)
