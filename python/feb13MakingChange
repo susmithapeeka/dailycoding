@@ -1,0 +1,13 @@
+"logic is by dividing number by values in array and making n to n%x"
+
+def change(n):
+  count=0
+  change=[1,5,10, 25,100,500]
+  change.sort(reverse=True)
+  for x in change:
+      j=n//x
+      count=count+j
+      n=n%x
+  return count
+  
+print(change(12))
