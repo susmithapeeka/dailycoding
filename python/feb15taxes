@@ -1,0 +1,11 @@
+def tax(n):
+    taxes={100000:"0.40",30000:"0.25",10000:"0.10"}
+    count=0
+    for x,y in taxes.items():
+        if n>x:
+          count+=(n-x)*float(y)
+          n=n-(n-x)
+    return int(count)
+      
+              
+print(tax(12000))
