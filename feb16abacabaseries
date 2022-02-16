@@ -1,0 +1,9 @@
+import string
+def abacaba(n):
+  alp=string.ascii_lowercase
+  if n==1:
+    return "a"
+  else:
+    return abacaba(n-1)+alp[n-1]+abacaba(n-1)
+    
+print(abacaba(5))
