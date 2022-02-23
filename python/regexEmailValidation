@@ -1,0 +1,7 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re
+k=re.compile("^[a-zA-Z]+\s<[a-zA-Z]{1}(\w|-|\.)+@[a-zA-Z]+\.(com|in|az|co|c|gt|moc)>$")
+for x in range(int(input())):
+    p=k.match(input())
+    if p:
+        print(p.group())
