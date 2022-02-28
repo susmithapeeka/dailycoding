@@ -1,0 +1,11 @@
+def sockMerchant(n, ar):
+    # Write your code here
+    l1=[]
+    countset=set(ar)
+    let=list(countset)
+    for x in let:
+        l1.append(ar.count(x))
+    count=0
+    for x in l1:
+        count+=x//2
+    return count
