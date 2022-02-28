@@ -1,0 +1,16 @@
+def migratoryBirds(arr):
+    # Write your code here
+    letters={}
+    bset=set(arr)
+    birdids=list(bset)
+    for x in bset:
+        letters[x]=arr.count(x)
+    print(letters)
+    top=max(letters.values())
+    print(top)
+    for x,y in letters.items():
+        if y==top:
+            return x
+        else:
+            continue
+        
