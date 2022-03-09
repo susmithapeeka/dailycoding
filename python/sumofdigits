@@ -1,0 +1,23 @@
+def sumofdigits(n):
+  n=str(n)
+  if len(n)==1:
+    return int(n)
+  else:
+    return sumofdigits(int(n)//10)+sumofdigits(int(n)%10)
+
+
+print(sumofdigits(123))
+
+
+
+another method
+
+
+def sumofdigits(n):
+  if n==0:
+    return 0
+  else:
+    return sumofdigits(int(n)//10)+sumofdigits(int(n)%10)
+
+
+print(sumofdigits(123))
