@@ -1,0 +1,8 @@
+def flatten(arr):
+    arrp=[]
+    for x in arr:
+        if type(x) is list:
+            arrp.extend(flatten(x))
+        else:
+            arrp.append(x)
+    return arrp
