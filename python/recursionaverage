@@ -1,0 +1,9 @@
+def average(arr,n):
+  if n==1:
+    return arr[n-1]
+  else:
+    return ((average(arr,n-1)*(n-1)+arr[n-1])/n)
+  
+
+  
+print(average([1,2,3],3))
