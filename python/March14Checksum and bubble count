@@ -1,0 +1,18 @@
+result=0
+count=0
+arr=list(map(int,(input().split())))
+for x in range(len(arr)-1):
+  if arr[x+1]==-1:
+    break
+  if arr[x]>arr[x+1]:
+    temp=arr[x]
+    arr[x]=arr[x+1]
+    arr[x+1]=temp
+    count=count+1
+  
+for x in range(len(arr)):
+  if arr[x]==-1:
+    break
+  result=(result+arr[x])*113
+  result=result%10000007
+print(count,result)
