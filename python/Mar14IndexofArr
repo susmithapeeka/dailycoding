@@ -1,0 +1,6 @@
+n=int(input())
+k=list(map(int,(input().split())))
+p=k.copy()
+k.sort()
+for x in k:
+  print(p.index(x)+1,end=" ")
