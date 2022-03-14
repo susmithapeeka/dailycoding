@@ -1,0 +1,13 @@
+n=int(input())
+for x in range(n):
+  n,runs=input().split()
+      
+  root=1.00
+  if root==0:
+    print(1)
+  else:
+    for x in range(int(runs)):
+      division=int(n)/root
+      root=(root+division)/2
+    print(round(root,15),end=" ")
+    
