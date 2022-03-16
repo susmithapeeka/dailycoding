@@ -1,0 +1,10 @@
+def smorse(string):
+morse = ".- -... -.-. -.. . ..-. --. .... .. .--- -.- .-.. -- -. --- .--. --.- .-. ... - ..- ...- .-- -..- -.-- --.."
+letters="abcdefghijklmnopqrstuvwxyz"
+list2=morse.split(" ")
+op=""
+index=0
+for x in string:
+    index=letters.index(x)
+    op=op+list2[index]
+return op
