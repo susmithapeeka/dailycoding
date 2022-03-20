@@ -1,0 +1,8 @@
+n=int(input())
+arr=list(map(float,input().split()))
+for x in range(n):
+  if x==0 or x==n-1:
+    print(arr[x],end=" ")
+  else:
+    k=(float(arr[x-1])+float(arr[x])+float(arr[x+1]))/3
+    print(k,end=" ")
