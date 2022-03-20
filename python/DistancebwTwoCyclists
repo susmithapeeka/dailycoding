@@ -1,0 +1,5 @@
+for x in range(int(input())):
+  s,a,b=input().split()
+  t=float(s)/(float(a)+float(b))
+  d=t*float(a)
+  print(d,end=" ")
