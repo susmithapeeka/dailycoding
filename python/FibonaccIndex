@@ -1,0 +1,15 @@
+def fibonacci_search(amount):
+  answer = []
+  for x in range(amount):
+    fibnumber=int(input())
+    a,b,c,count=0,1,0,0
+    while(c<=fibnumber and fibnumber!=0):
+      c=a+b
+      a=b 
+      b=c 
+      count+=1 
+    answer.append(str(count))
+  print(' '.join(answer))
+  
+  
+print(fibonacci_search(int(input())))
