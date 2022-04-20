@@ -14,10 +14,19 @@ class binaryTree:
       if self.list[x]==nodevalue:
         return "success"
     return "not found"
+  def preOrderTraversal(self,index):
+    if index>self.lastused:
+      return
+    print(self.list[index])
+    self.preOrderTraversal(index*2)
+    self.preOrderTraversal(index*2+1)
+    
       
 bina=binaryTree(8)
 bina.insert("Drinks")
 bina.insert("Hot")
 bina.insert("Cold")
+bina.insert("coffee")
+bina.insert("tea")
 print(bina.search("Hot"))
-
+bina.preOrderTraversal(1)
