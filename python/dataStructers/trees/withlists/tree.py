@@ -44,6 +44,9 @@ class binaryTree:
         self.list[self.lastused]=None
         self.lastused-=1 
         return "deleted"
+  def DeleteBT(self):
+    self.list=None
+    return "Tree deleted"
 bina=binaryTree(8)
 bina.insert("Drinks")
 bina.insert("Hot")
@@ -53,3 +56,4 @@ bina.insert("tea")
 print(bina.deleteNode("coffee"))
 print()
 bina.levelOrderTraversal(1)
+print(bina.DeleteBT())
