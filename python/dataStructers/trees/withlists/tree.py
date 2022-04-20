@@ -11,7 +11,7 @@ class binaryTree:
     return "value successfully inserted"
   def search(self,nodevalue):
     for x in range(len(self.list)):
-      if self.list[i]==nodevalue:
+      if self.list[x]==nodevalue:
         return "success"
     return "not found"
       
@@ -19,3 +19,5 @@ bina=binaryTree(8)
 bina.insert("Drinks")
 bina.insert("Hot")
 bina.insert("Cold")
+print(bina.search("Hot"))
+
