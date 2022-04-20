@@ -20,7 +20,18 @@ class binaryTree:
     print(self.list[index])
     self.preOrderTraversal(index*2)
     self.preOrderTraversal(index*2+1)
-    
+  def InorderTraversal(self,index):
+    if index>self.lastused:
+      return
+    self.preOrderTraversal(index*2)
+    print(self.list[index])
+    self.preOrderTraversal(index*2+1)
+  def PostOrderTraversal(self,index):
+    if index>self.lastused:
+      return
+    self.PostOrderTraversal(index*2)
+    self.PostOrderTraversal(index*2+1)
+    print(self.list[index])
       
 bina=binaryTree(8)
 bina.insert("Drinks")
@@ -30,3 +41,7 @@ bina.insert("coffee")
 bina.insert("tea")
 print(bina.search("Hot"))
 bina.preOrderTraversal(1)
+print()
+bina.InorderTraversal(1)
+print()
+bina.PostOrderTraversal(1)
