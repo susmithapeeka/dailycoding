@@ -35,18 +35,21 @@ class binaryTree:
   def levelOrderTraversal(self,index):
     for i in range(index,self.lastused+1):
       print(self.list[i])
-      
+  def deleteNode(self,value):
+    if self.lastused==0:
+      return "no node to delete"
+    for x in range(1,self.lastused):
+      if self.list[x]==value:
+        self.list[x]=self.list[self.lastused]
+        self.list[self.lastused]=None
+        self.lastused-=1 
+        return "deleted"
 bina=binaryTree(8)
 bina.insert("Drinks")
 bina.insert("Hot")
 bina.insert("Cold")
 bina.insert("coffee")
 bina.insert("tea")
-print(bina.search("Hot"))
-bina.preOrderTraversal(1)
-print()
-bina.InorderTraversal(1)
-print()
-bina.PostOrderTraversal(1)
+print(bina.deleteNode("coffee"))
 print()
 bina.levelOrderTraversal(1)
