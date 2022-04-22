@@ -71,8 +71,8 @@ def delete(rootNode,dvalue):
       rootNode=None
       return temp
     temp=minvalue(rootNode.rightChild)
-    rootNode.data=temp.data
-    rootNode.rightChild=delete(rootNode.rightChild,temp.data)
+    rootNode.value=temp.value
+    rootNode.rightChild=delete(rootNode.rightChild,temp.value)
   return rootNode
   
 def deleteBST(rootNode):
@@ -86,4 +86,6 @@ print(insertNode(BST,30))
 print(insertNode(BST,10))
 print(insertNode(BST,40))
 print(insertNode(BST,60))
-print(searchNode(BST,20))
+searchNode(BST,10)
+print(delete(BST,30))
+levelOrder(BST)
