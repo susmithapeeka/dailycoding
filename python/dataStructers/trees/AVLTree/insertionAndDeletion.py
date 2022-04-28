@@ -90,10 +90,51 @@ def insertNode(rootNode, nodeValue):
         rootNode.rightChild = rightRotation(rootNode.rightChild)
         return leftRotation(rootNode)
     return rootNode
+
+def getMinValueNode(rootNode):
+    if rootNode is None or rootNode.leftChild is None:
+        return rootNode
+    return getMinValueNode(rootNode.leftChild)
+    
+def deleteNode(rootNode,nodeValue):
+  if not rootNode:
+    return rootNode
+  elif nodeValue < rootNode.data:
+    rootNode.leftChild=deleteNode(rootNode.leftChild,nodeValue)
+  elif nodeValue>rootNode.data:
+    rootNode.rightChild=deleteNode(rootNode.rightChild,nodeValue)
+  else:
+    if rootNode.leftChild is None:
+      temp=rootNode.rightChild
+      rootNode=None
+      return temp
+    elif rootNode.rightChild is None:
+      temp=rootNode.leftChild
+      rootNode=None
+      return temp
+    temp=getMinValueNode(rootNode.rightChild)
+    rootNode.data=temp.data
+    rootNode.rightChild=deleteNode(rootNode.rightChild,temp.data)
+  balance=getbalance(rootNode)
+  if balance > 1 and getbalance(rootNode.leftChild) >= 0:
+        return rightRotation(rootNode)
+  if balance < -1 and getbalance(rootNode.rightChild) <= 0:
+        return leftRotation(rootNode)
+  if balance > 1 and getbalance(rootNode.leftChild) < 0:
+        rootNode.leftChild = leftRotation(rootNode.leftChild)
+        return rightRotation(rootNode)
+  if balance < -1 and getbalance(rootNode.rightChild) > 0:
+        rootNode.rightChild = rightRotation(rootNode.rightChild)
+        return leftRotation(rootNode)
+    
+  return rootNode
   
        
 newAVL=AVL(30)
 newAVL = insertNode(newAVL, 10)
 newAVL = insertNode(newAVL, 15)
 newAVL = insertNode(newAVL, 20)
+levelOrder(newAVL)
+deleteNode(newAVL,15)
+print()
 levelOrder(newAVL)
