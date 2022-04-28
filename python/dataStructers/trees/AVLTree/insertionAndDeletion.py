@@ -128,7 +128,11 @@ def deleteNode(rootNode,nodeValue):
         return leftRotation(rootNode)
     
   return rootNode
-  
+def deleteAVL(rootNode):
+    rootNode.data = None
+    rootNode.leftChild = None
+    rootNode.rightChild = None
+    return "The AVL has been successfully deleted"
        
 newAVL=AVL(30)
 newAVL = insertNode(newAVL, 10)
