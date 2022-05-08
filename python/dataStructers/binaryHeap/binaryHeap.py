@@ -22,6 +22,33 @@ def levelOrder(rootnode):
   else:
     for i in range(1,rootnode.heapSize+1):
       print(rootnode.customList[i])
+def heapifyInsert(rootnode,index,heapType):
+  parentindex=int(index/2)
+  if index<=1:
+    return
+  if heapType=="min":
+    if rootnode.customList[index]<rootnode.customList[parentindex]:
+      temp=rootnode.customList[index]
+      rootnode.customList[index]=rootnode.customList[parentindex]
+      rootnode.customList[parentindex]=temp
+    heapifyInsert(rootnode,parentindex,heapType)
+  if heapType=="max":
+    if rootnode.customList[index]>rootnode.customList[parentindex]:
+      temp=rootnode.customList[index]
+      rootnode.customList[index]=rootnode.customList[parentindex]
+      rootnode.customList[parentindex]=temp
+    heapifyInsert(rootnode,parentindex,heapType)
+def insertNode(rootnode,value,heapType):
+  if rootnode.heapSize+1==rootnode.maxsize:
+    return
+  rootnode.customList[rootnode.heapSize+1]=value
+  rootnode.heapSize+=1 
+  heapifyInsert(rootnode,rootnode.heapSize,heapType)
+  return "value inserted"
+    
 newBinaryItem=heap(5)
-print(sizeofHeap(newBinaryItem))
-  
+insertNode(newBinaryItem,4,"max")
+insertNode(newBinaryItem,5,"max")
+insertNode(newBinaryItem,2,"max")
+insertNode(newBinaryItem,1,"max")
+print(levelOrder(newBinaryItem))
