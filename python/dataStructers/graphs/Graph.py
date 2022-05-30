@@ -15,6 +15,16 @@ class Graph:
         if adjacentVertex not in visited:
           visited.append(adjacentVertex)
           queue.append(adjacentVertex)
+  def dfs(self,vertex):
+    visited=[vertex]
+    stack=[vertex]
+    while stack:
+      deVertex=stack.pop()
+      print(deVertex)
+      for adjacentVertex in self.gdict[deVertex]:
+        if adjacentVertex not in visited:
+          visited.append(adjacentVertex)
+          stack.append(adjacentVertex)
 
 
 customDict = { "a" : ["b","c"],
@@ -26,3 +36,5 @@ customDict = { "a" : ["b","c"],
                }
 g = Graph(customDict)
 g.bfs("a")
+print()
+g.dfs("a")
