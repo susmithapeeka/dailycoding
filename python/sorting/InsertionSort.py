@@ -4,7 +4,7 @@ def insertionSort(customlist):
     j=i-1
     while j>=0 and key<customlist[j]:
       customlist[j+1]=customlist[j]
-      j -= 1
+      j-=1 
     customlist[j+1]=key
   print(customlist)
 
